@@ -11,13 +11,13 @@ class Event:
     description: str
     location: Location
     plot_date: PlotDate
-    involved_characters: set(Character) = field(default_factory=list)
+    involved_characters: set[Character] = field(default_factory=list)
 
 
 @dataclass
 class LinkedEvent(Event):
-    triggering_events: set(Event) = field(default_factory=list)
-    following_events: set(Event) = field(default_factory=list)
+    triggering_events: set[Event] = field(default_factory=list)
+    following_events: set[Event] = field(default_factory=list)
 
     @staticmethod
     def convert_event(event: Event):
