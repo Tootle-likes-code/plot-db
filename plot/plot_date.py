@@ -1,9 +1,14 @@
+""" Handles customer date/times for potentially fantasy dates. """
+
 from dataclasses import dataclass
 from typing import Optional
 
 
 @dataclass
 class PlotDate:
+    """
+    A custom date + hour that works for custom calendars.
+    """
     year: int
     month: Optional[int] = None
     day: Optional[int] = None
