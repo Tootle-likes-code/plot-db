@@ -15,4 +15,4 @@ class Place(ABC):
 @dataclass
 class Location(Place):
     """ The implementation of Place, which is aware of it's parent location. """
-    parent_location: Optional[Place]
+    parent_location: Optional[Place] = None
