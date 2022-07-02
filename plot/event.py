@@ -18,3 +18,7 @@ class Event:
 class LinkedEvent(Event):
     triggering_events: set(Event) = field(default_factory=list)
     following_events: set(Event) = field(default_factory=list)
+
+    @staticmethod
+    def convert_event(event: Event):
+        return LinkedEvent(event.name, event.description, event.location, event.plot_date)
