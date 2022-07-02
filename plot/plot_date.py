@@ -26,6 +26,14 @@ class PlotDate:
         self.day = day
         self.hour = hour
 
+    def __hash__(self):
+        return hash((
+            self.year,
+            self.month,
+            self.day,
+            self.hour
+        ))
+
     def __str__(self) -> str:
         date = f"{self.year}"
         date += f"{f'-{self.month:02}' if self.month else ''}"

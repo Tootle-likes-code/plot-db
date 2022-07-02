@@ -16,6 +16,14 @@ class Event:
     plot_date: PlotDate
     involved_characters: set[Character] = field(default_factory=set)
 
+    def __hash__(self):
+        return hash((
+            self.name,
+            self.description,
+            self.location,
+            self.plot_date
+        ))
+
 
 @dataclass
 class LinkedEvent(Event):
