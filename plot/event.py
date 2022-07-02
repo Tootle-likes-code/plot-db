@@ -53,4 +53,4 @@ class LinkedEvent(Event):
             following_events = set([])
 
         return LinkedEvent(event.name, event.description, event.location, event.plot_date,
-                           triggering_events, following_events)
+                           event.involved_characters, triggering_events, following_events)
